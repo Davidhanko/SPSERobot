@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+:root{
+    --background_dark_color: #000000;
+    --background_light_color: #282A5C;
+    --text_color: #ffffff;
+    --text_shadow: #727272;
+    --ball_background: #39316D;
+}
+
+header{
+    background: linear-gradient(var(--background_light_color), var(--background_dark_color));
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: white;
+    -webkit-text-stroke: 2px var(--text_shadow);
+    font-size: 50px;
+}
+
+body{
+    background: linear-gradient(var(--background_dark_color), var(--background_light_color));
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ball{
+    width: 125px;
+    height: 125px;
+    background-color: var(--ball_background);
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 30px #000000);
+    border: none;
+}
+
+.ball:hover{
+    cursor: pointer;
+}
+
+.previous{
+    position: absolute;
+    top: 75vh;
+    left: 10vw;
+}
+
+.next{
+    position: absolute;
+    top: 75vh;
+    right: 10vw;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+.carousel-image{
+    width: 71.6vw;
+    height: 740px;
+    border-radius: 100px;
+    background-color: black;
+    opacity: 30%;
+    position: relative;
+}
+
+.carousel-image-background{
+    width: 71.6vw;
+    height: 740px;
+    border-radius: 100px;
+    background-color: black;
+    margin-left: 14.5vw;
+}
+
+.text-carousel{
+    color: white;
+    font-size: 30px;
+    position: relative;
+    top: -550px;
+    text-align: center;
+}
+
+.heading-carousel{
+    padding-bottom: 150px;
+    margin-top: -150px;
+}
+
+.subheading-carousel{
+    padding-bottom: 100px;
+}
+
+.paragraph-carousel{
+font-size: 1.5rem;
+}
+
+.hidden{
+    display: none;
+}
+
+/*ANIMATIONS*/
+
+/**
+ * ----------------------------------------
+ * animation roll-in-left
+ * ----------------------------------------
+ */
+
+.roll-in-left {
+    -webkit-animation: roll-in-left 1s ease-out both;
+    animation: roll-in-left 1s ease-out both;
+}
+
+
+@-webkit-keyframes roll-in-left {
+    0% {
+        -webkit-transform: translateX(-800px) rotate(-540deg);
+        transform: translateX(-800px) rotate(-540deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+@keyframes roll-in-left {
+    0% {
+        -webkit-transform: translateX(-800px) rotate(-540deg);
+        transform: translateX(-800px) rotate(-540deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation roll-in-right
+ * ----------------------------------------
+ */
+
+.roll-in-right {
+    -webkit-animation: roll-in-right 1s ease-out both;
+    animation: roll-in-right 1s ease-out both;
+}
+
+@-webkit-keyframes roll-in-right {
+    0% {
+        -webkit-transform: translateX(800px) rotate(540deg);
+        transform: translateX(800px) rotate(540deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+@keyframes roll-in-right {
+    0% {
+        -webkit-transform: translateX(800px) rotate(540deg);
+        transform: translateX(800px) rotate(540deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-out
+ * ----------------------------------------
+ */
+
+.fade-out {
+    animation: fade-out 0.5s ease forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation shake
+ * ----------------------------------------
+ */
+
+.nonrotate:hover {
+    -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    animation: shake-bottom 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+@-webkit-keyframes shake-bottom {
+    0%,
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+
+    }
+    10% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(4deg);
+        transform: rotate(4deg);
+    }
+    80% {
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+    }
+    90% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+}
+@keyframes shake-bottom {
+    0%,
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+
+    }
+    10% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(4deg);
+        transform: rotate(4deg);
+    }
+    80% {
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+    }
+    90% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+}
+
+.rotate:hover {
+    -webkit-animation: shake-bottom-rotate 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+    animation: shake-bottom-rotate 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+@-webkit-keyframes shake-bottom-rotate {
+    0%,
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+
+    }
+    10% {
+        -webkit-transform: rotate(182deg);
+        transform: rotate(182deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(176deg);
+        transform: rotate(176deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(184deg);
+        transform: rotate(184deg);
+    }
+    80% {
+        -webkit-transform: rotate(178deg);
+        transform: rotate(178deg);
+    }
+    90% {
+        -webkit-transform: rotate(182deg);
+        transform: rotate(182deg);
+    }
+}
+@keyframes shake-bottom-rotate {
+    0%,
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+
+    }
+    10% {
+        -webkit-transform: rotate(182deg);
+        transform: rotate(182deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(176deg);
+        transform: rotate(176deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(184deg);
+        transform: rotate(184deg);
+    }
+    80% {
+        -webkit-transform: rotate(178deg);
+        transform: rotate(178deg);
+    }
+    90% {
+        -webkit-transform: rotate(182deg);
+        transform: rotate(182deg);
+    }
+}
+
+
+/*Made by Dávid Hanko, davihan11 on Discord*/
