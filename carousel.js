@@ -57,32 +57,50 @@ function prevSlide() {
 }
 
 function fadeOutCurrentSlide() {
-  slides[slideIndex - 1].classList.add('fade-out');
+  slides[slideIndex - 1].classList.add('slide-in-bottom');
   setTimeout(() => {
-    slides[slideIndex - 1].classList.remove('fade-out');
+    slides[slideIndex - 1].classList.remove('slide-in-bottom');
   }, 500); // Remove fade-out class after 500ms
 }
 
 function setAnimations(direction) {
   for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove('roll-in-left', 'roll-in-right');
+    slides[i].classList.remove('slide-in-left', 'slide-in-right');
   }
 
   if (direction === 'next') {
-    slides[slideIndex - 1].classList.add('roll-in-right');
+    slides[slideIndex - 1].classList.add('slide-in-right');
     if (slideIndex > 1) {
-      slides[slideIndex - 2].classList.add('roll-in-left');
+      slides[slideIndex - 2].classList.add('slide-in-left');
     } else {
-      slides[slides.length - 1].classList.add('roll-in-left');
+      slides[slides.length - 1].classList.add('slide-in-left');
     }
   } else if (direction === 'prev') {
-    slides[slideIndex - 1].classList.add('roll-in-left');
+    slides[slideIndex - 1].classList.add('slide-in-left');
     if (slideIndex < slides.length) {
-      slides[slideIndex].classList.add('roll-in-right');
+      slides[slideIndex].classList.add('slide-in-right');
     } else {
-      slides[0].classList.add('roll-in-right');
+      slides[0].classList.add('slide-in-right');
     }
   }
 }
+
+//Make scroll work and disable scrolling when animation is happening
+let scroll = true;
+document.addEventListener('wheel', (event) => {
+  if (scroll) {
+    scroll = false;
+    if (event.deltaY > 0) {
+      nextSlide();
+    } else {
+      prevSlide();
+    }
+    setTimeout(() => {
+      scroll = true;
+    }, 2000);
+  }
+});
+
+
 
 //Made by Dávid Hanko, davihan11 on Discord

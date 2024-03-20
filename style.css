@@ -62,8 +62,8 @@ body{
 }
 
 .carousel-image{
-    width: 71.6vw;
-    height: 740px;
+    width: 100%;
+    height: 85vh;
     border-radius: 100px;
     background-color: black;
     opacity: 30%;
@@ -71,11 +71,10 @@ body{
 }
 
 .carousel-image-background{
-    width: 71.6vw;
-    height: 740px;
+    width: 100%;
+    height: 85vh;
     border-radius: 100px;
     background-color: black;
-    margin-left: 14.5vw;
 }
 
 .text-carousel{
@@ -107,105 +106,114 @@ font-size: 1.5rem;
 
 /**
  * ----------------------------------------
- * animation roll-in-left
+ * animation slide-in-left
  * ----------------------------------------
  */
 
-.roll-in-left {
-    -webkit-animation: roll-in-left 1s ease-out both;
-    animation: roll-in-left 1s ease-out both;
+.slide-in-left {
+    -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-
-@-webkit-keyframes roll-in-left {
+@-webkit-keyframes slide-in-left {
     0% {
-        -webkit-transform: translateX(-800px) rotate(-540deg);
-        transform: translateX(-800px) rotate(-540deg);
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
         opacity: 0;
     }
     100% {
-        -webkit-transform: translateX(0) rotate(0deg);
-        transform: translateX(0) rotate(0deg);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
-@keyframes roll-in-left {
+@keyframes slide-in-left {
     0% {
-        -webkit-transform: translateX(-800px) rotate(-540deg);
-        transform: translateX(-800px) rotate(-540deg);
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
         opacity: 0;
     }
     100% {
-        -webkit-transform: translateX(0) rotate(0deg);
-        transform: translateX(0) rotate(0deg);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
+
 
 /**
  * ----------------------------------------
- * animation roll-in-right
+ * animation slide-in-right
  * ----------------------------------------
  */
 
-.roll-in-right {
-    -webkit-animation: roll-in-right 1s ease-out both;
-    animation: roll-in-right 1s ease-out both;
+.slide-in-right {
+    -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@-webkit-keyframes roll-in-right {
+@-webkit-keyframes slide-in-right {
     0% {
-        -webkit-transform: translateX(800px) rotate(540deg);
-        transform: translateX(800px) rotate(540deg);
+        -webkit-transform: translateX(1000px);
+        transform: translateX(1000px);
         opacity: 0;
     }
     100% {
-        -webkit-transform: translateX(0) rotate(0deg);
-        transform: translateX(0) rotate(0deg);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
-@keyframes roll-in-right {
+@keyframes slide-in-right {
     0% {
-        -webkit-transform: translateX(800px) rotate(540deg);
-        transform: translateX(800px) rotate(540deg);
+        -webkit-transform: translateX(1000px);
+        transform: translateX(1000px);
         opacity: 0;
     }
     100% {
-        -webkit-transform: translateX(0) rotate(0deg);
-        transform: translateX(0) rotate(0deg);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
+
 
 /**
  * ----------------------------------------
- * animation fade-out
+ * animation slide-in-bottom
  * ----------------------------------------
  */
 
-.fade-out {
-    animation: fade-out 0.5s ease forwards;
+.slide-in-bottom {
+    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
 }
 
-@keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-    to {
+@-webkit-keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
         opacity: 0;
     }
-}
-
-
-@keyframes fade-out {
-    from {
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
         opacity: 1;
     }
-    to {
+}
+@keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
         opacity: 0;
     }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
+
 
 /**
  * ----------------------------------------
