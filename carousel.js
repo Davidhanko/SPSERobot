@@ -87,7 +87,8 @@ function setAnimations(direction) {
 
 //Make scroll work and disable scrolling when animation is happening
 let scroll = true;
-document.addEventListener('wheel', (event) => {
+const body = document.querySelector('body');
+body.addEventListener('wheel', (event) => {
   if (scroll) {
     scroll = false;
     if (event.deltaY > 0) {
